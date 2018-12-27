@@ -39,7 +39,7 @@ export default (): RobotsAgentType => {
       const robotsContents = await getRobotsContents(robotsUrl);
 
       if (robotsContents) {
-        robotsIndex[robotsNamespace] = parseRobots(robotsContents);
+        robotsIndex[robotsNamespace] = parseRobots(robotsUrl, robotsContents);
       } else {
         robotsIndex[robotsNamespace] = null;
       }
