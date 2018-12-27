@@ -88,6 +88,12 @@ import {
 
 ```
 
+## Difference from `robots-parser`
+
+`robots-agent` abstract `robots-parser` methods by automating retrieval and cache of robots.txt content and safe handling of `robots-parser` methods.
+
+Unlike `robots-parser`, `robots-agent` will throw an error if `getMatchingLineNumber`, `getPreferredHost`, `getSitemaps`, `isAllowed` or `isDisallowed` is invoked for a URL that does not have robots.txt. Use `isRobotsAvailable` to check availability of robots.txt prior to invoking the parser methods.
+
 ## Implementation
 
 `robots-agent` uses [`robots-parser`](https://github.com/samclarke/robots-parser) to implement all robots.txt checks.
